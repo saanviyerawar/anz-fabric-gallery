@@ -1,0 +1,28 @@
+name: Request Translink access
+description: Request administrator-reviewed access to the Fabric-hosted Translink demo.
+title: "[Access request] Translink"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Request access to **Translink Community Impact Studio**.
+
+        **This issue is public. Do not post email addresses, tenant identifiers,
+        credentials, tokens or other personal information.**
+
+        A maintainer will review your request and arrange an approved private
+        channel for account verification. GitHub issues do not offer private
+        messaging. Only a tenant administrator can approve membership in
+        **Translink Demo Users** and verify effective app **Read and execute**
+        permission. Submitting this form does not grant access.
+
+        Tenant registration, MFA and licence requirements still apply.
+  - type: checkboxes
+    id: acknowledgements
+    attributes:
+      label: Access request
+      options:
+        - label: I request access to the Translink demo and understand that administrator approval is required.
+          required: true
+        - label: I will share account details only through an approved private channel arranged by a maintainer, not in this public issue.
+          required: true
