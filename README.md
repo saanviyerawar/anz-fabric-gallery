@@ -7,8 +7,10 @@ It is a standalone HTML/CSS/JavaScript site with no build step, package install,
 external scripts, API keys, or Fabric tenant connection.
 
 Open `index.html` in a modern browser, or serve this directory with an existing
-static web server. The same file can be published with GitHub Pages from the
-repository root. No deployment has been configured.
+static web server. The live gallery is published at
+[saanviyerawar.github.io/anz-fabric-gallery](https://saanviyerawar.github.io/anz-fabric-gallery/).
+GitHub Pages publishes from the repository root on `main`; pushed changes are
+deployed automatically.
 
 ### Gallery content
 
