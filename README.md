@@ -34,8 +34,9 @@ deployed automatically.
   statistics when introducing confirmed project details, media or links.
 - Category and placeholder counts derive from the catalogue. The page explicitly
   states that zero projects have been published.
-- The theme follows the device preference unless `?clawpilotTheme=light` or
-  `?clawpilotTheme=dark` is supplied. The theme button updates this URL parameter.
+- The theme defaults to light regardless of the device preference. Use
+  `?clawpilotTheme=light` or `?clawpilotTheme=dark` to override it; missing or
+  invalid values default to light. The theme button updates this URL parameter.
   Colours use Australian-flag-inspired navy and white, with a blue-grey dark
   theme. Shared CSS colour tokens keep buttons, links, badges and focus states
   consistent.
