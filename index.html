@@ -73,7 +73,7 @@
     h1, h2, h3, h4, p { margin: 0; }
     a { color: var(--cp-accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    button, input, select { font: inherit; }
+    button, input { font: inherit; }
     button, summary { cursor: pointer; }
     :focus-visible { outline: 3px solid var(--cp-accent); outline-offset: 4px; }
     .wrap { max-width: 1180px; margin-inline: auto; padding-inline: 24px; }
@@ -110,11 +110,11 @@
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 22px; }
     .card { display: flex; flex-direction: column; background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 16px; overflow: hidden; color: var(--cp-text); transition: transform .16s, border-color .16s; }
     .card[href]:hover { transform: translateY(-3px); border-color: var(--cp-accent); text-decoration: none; }
-    .shot { aspect-ratio: 16 / 10; background: var(--cp-surface-soft); border-bottom: 1px solid var(--cp-border); position: relative; overflow: hidden; }
-    .noshot { display: grid; place-items: center; height: 100%; color: var(--cp-text-soft); font-size: .86rem; }
+    .shot { aspect-ratio: 16 / 10; background: var(--cp-surface-soft); border-bottom: 1px solid var(--cp-border); display: grid; place-items: center; overflow: hidden; color: var(--cp-accent); }
+    .shot svg { width: 72px; height: 72px; }
     .card-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
     .card h4, .principle h3 { font-size: 1.06rem; letter-spacing: -.01em; line-height: 1.4; }
-    .card p, .principle p { color: var(--cp-text-muted); font-size: .92rem; flex: 1; }
+    .principle p { color: var(--cp-text-muted); font-size: .92rem; flex: 1; }
     .badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
     .badge { font-size: .72rem; padding: 3px 8px; border-radius: 999px; background: var(--cp-accent-soft); color: var(--cp-accent); border: 1px solid var(--cp-highlight); }
     .filter-panel { margin-bottom: 24px; font-size: .9rem; }
@@ -122,7 +122,7 @@
     .filter-controls { padding-top: 16px; }
     .toolbar { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
     .search { flex: 1 1 240px; }
-    input, select { min-height: 44px; border: 1px solid var(--cp-border); background: var(--cp-surface); color: var(--cp-text); border-radius: 10px; padding: 10px 12px; max-width: 100%; }
+    input { min-height: 44px; border: 1px solid var(--cp-border); background: var(--cp-surface); color: var(--cp-text); border-radius: 10px; padding: 10px 12px; max-width: 100%; }
     input { width: 100%; }
     input::placeholder { color: var(--cp-text-soft); }
     .filters { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -133,9 +133,6 @@
     .empty { padding: 40px 24px; border: 1px dashed var(--cp-border-strong); border-radius: 16px; text-align: center; }
     .empty p { margin-block: 12px 20px; color: var(--cp-text-muted); }
     [hidden] { display: none !important; }
-    pre { background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 10px; padding: 14px 16px; overflow-x: auto; font-size: .88rem; line-height: 1.55; margin: 0; }
-    code { font-family: Consolas, "Courier New", Courier, monospace; }
-    .deploy-note { margin-top: 22px; margin-bottom: 0; }
     .principle { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px; background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 16px; }
     .contribute { margin-top: 30px; font-size: .92rem; color: var(--cp-text-muted); }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
@@ -147,7 +144,6 @@
       .header-inner { gap: 12px; }
       .brand { font-size: 1rem; }
       .search { flex-basis: 100%; }
-      select { width: 100%; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -173,7 +169,7 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap">
         <h1 id="hero-title">Fabric Apps for Australia and New Zealand.</h1>
-        <p class="lead">Digital twins, live transport maps, analytical apps and tools for the data platform itself. A growing Microsoft Fabric gallery for the Australia and New Zealand community. Project names, details and demos will be added as they are confirmed.</p>
+        <p class="lead">A home for the Australia and New Zealand Microsoft Fabric community, from digital twins and analytical apps to platform tools and interactive learning.</p>
         <div class="actions">
           <a class="button primary" href="#gallery">Browse the gallery</a>
           <a class="button" href="https://github.com/saanviyerawar/anz-fabric-gallery" target="_blank" rel="noopener noreferrer">View the source</a>
@@ -189,14 +185,12 @@
     <section class="section" id="gallery" aria-labelledby="gallery-title">
       <div class="wrap">
         <h2 id="gallery-title">The gallery</h2>
-        <p class="sub">Project spaces are organised by category. Names, descriptions, previews and links are coming soon. The numbered cards below are placeholders, not published apps.</p>
+        <p class="sub">Eight project spaces, organised by category. These numbered placeholders reserve room for future projects; no apps are published yet.</p>
         <details class="filter-panel">
           <summary>Filter projects</summary>
           <div class="filter-controls">
             <div class="toolbar">
               <div class="search"><label class="sr-only" for="search">Search project placeholders or categories</label><input id="search" type="search" placeholder="Search projects or categories..." autocomplete="off"></div>
-              <label class="sr-only" for="region">Project region</label>
-              <select id="region"><option value="all">All regions</option><option value="tbc">Region to be confirmed</option></select>
             </div>
             <div class="filters" role="group" aria-label="Filter by category" id="filters"></div>
             <div class="result-line"><p id="results" role="status" aria-live="polite"></p><button class="text-button" id="clear" type="button">Reset filters</button></div>
@@ -204,18 +198,13 @@
         </details>
         <div id="app-groups"></div>
         <div class="empty" id="empty" hidden><h3>No projects match just yet.</h3><p>Try a different search or explore all categories.</p><button class="button" id="empty-reset" type="button">Show all projects</button></div>
-        <noscript><p>Enable JavaScript to browse the eight project placeholders. Project names and details are still to be confirmed.</p></noscript>
+        <noscript><p>Enable JavaScript to browse the project placeholders.</p></noscript>
       </div>
     </section>
     <section class="section section-alt" id="deploy" aria-labelledby="deploy-title">
       <div class="wrap">
-        <h2 id="deploy-title">Project setup is coming soon</h2>
-        <p class="sub">Each confirmed project will have its own prerequisites, data sources and instructions for running locally and deploying in a Fabric tenant.</p>
-        <pre><code>Project name:       To be confirmed
-Source repository:  Coming soon
-Local setup:        Coming soon
-Fabric deployment:  Coming soon</code></pre>
-        <p class="sub deploy-note">There are no project repositories or deployment instructions to share yet. This gallery currently reserves space for future projects.</p>
+        <h2 id="deploy-title">Project setup</h2>
+        <p class="sub">Setup guides will be linked when projects are confirmed, covering prerequisites, data sources, local development and Fabric deployment.</p>
       </div>
     </section>
     <section class="section" id="about" aria-labelledby="about-title">
@@ -234,22 +223,22 @@ Fabric deployment:  Coming soon</code></pre>
   <script>
     const categories = [
       { id: "all", name: "All projects" },
-      { id: "geo", name: "Digital twins and geospatial", icon: "\u{1F30D}", blurb: "3D, map and live-operations views of real-world systems." },
-      { id: "analytics", name: "Analytical apps", icon: "\u{1F4CA}", blurb: "Apps that put data and insight in front of an end user." },
-      { id: "tools", name: "Fabric and Power BI tools", icon: "\u{1F9F0}", blurb: "Apps that inspect, document or administer the data platform itself." },
-      { id: "learning", name: "Games and interactive learning", icon: "\u{1F3AE}", blurb: "Games and interactive experiences that go beyond dashboards." }
+      { id: "geo", name: "Digital twins and geospatial", icon: "\u{1F30D}", paths: ["M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z", "M3 12h18M12 3c4 5 4 13 0 18-4-5-4-13 0-18Z"], blurb: "3D, map and live-operations views of real-world systems." },
+      { id: "analytics", name: "Analytical apps", icon: "\u{1F4CA}", paths: ["M4 3v17h17", "M8 16v-5m5 5V6m5 10V9"], blurb: "Apps that put data and insight in front of an end user." },
+      { id: "tools", name: "Fabric and Power BI tools", icon: "\u{1F9F0}", paths: ["m14 6 4 4 3-3a6 6 0 0 1-8 7l-6 6a2.1 2.1 0 0 1-3-3l6-6a6 6 0 0 1 7-8Z"], blurb: "Apps that inspect, document or administer the data platform itself." },
+      { id: "learning", name: "Games and interactive learning", icon: "\u{1F3AE}", paths: ["M7 7h10c2 0 3 1 3.5 3l1 7a2 2 0 0 1-3.5 1L15 15H9l-3 3a2 2 0 0 1-3.5-1l1-7C4 8 5 7 7 7Z", "M6 11h4m-2-2v4m7-2h.01M18 13h.01"], blurb: "Games and interactive experiences that go beyond dashboards." }
     ];
     const apps = [
-      { title: "Project 01", category: "geo", region: "tbc" },
-      { title: "Project 02", category: "geo", region: "tbc" },
-      { title: "Project 03", category: "geo", region: "tbc" },
-      { title: "Project 04", category: "analytics", region: "tbc" },
-      { title: "Project 05", category: "tools", region: "tbc" },
-      { title: "Project 06", category: "tools", region: "tbc" },
-      { title: "Project 07", category: "learning", region: "tbc" },
-      { title: "Project 08", category: "learning", region: "tbc" }
+      { title: "Project 01", category: "geo" },
+      { title: "Project 02", category: "geo" },
+      { title: "Project 03", category: "geo" },
+      { title: "Project 04", category: "analytics" },
+      { title: "Project 05", category: "tools" },
+      { title: "Project 06", category: "tools" },
+      { title: "Project 07", category: "learning" },
+      { title: "Project 08", category: "learning" }
     ];
-    const state = { category: "all", region: "all", search: "" };
+    const state = { category: "all", search: "" };
     const $ = (selector) => document.querySelector(selector);
     const categoryName = (id) => categories.find((category) => category.id === id).name;
     function element(tag, className, text) {
@@ -261,20 +250,33 @@ Fabric deployment:  Coming soon</code></pre>
     function card(app) {
       const article = element("article", "card");
       const shot = element("div", "shot");
-      shot.append(element("div", "noshot", "Preview coming soon"));
+      const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      icon.setAttribute("viewBox", "0 0 24 24");
+      icon.setAttribute("fill", "none");
+      icon.setAttribute("stroke", "currentColor");
+      icon.setAttribute("stroke-width", "1.5");
+      icon.setAttribute("stroke-linecap", "round");
+      icon.setAttribute("stroke-linejoin", "round");
+      icon.setAttribute("aria-hidden", "true");
+      icon.setAttribute("focusable", "false");
+      categories.find((category) => category.id === app.category).paths.forEach((data) => {
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttribute("d", data);
+        icon.append(path);
+      });
+      shot.append(icon);
       const body = element("div", "card-body");
       const badges = element("div", "badges");
-      badges.append(element("span", "badge", "Coming soon"));
-      body.append(element("h4", "", app.title), element("p", "", "Project name and details to be confirmed."), badges);
+      badges.append(element("span", "badge", "Placeholder"));
+      body.append(element("h4", "", app.title), badges);
       article.append(shot, body);
       return article;
     }
     function render() {
       const terms = state.search.trim().toLocaleLowerCase("en-AU").split(/\s+/).filter(Boolean);
       const visible = apps.filter((app) => {
-        const searchable = [app.title, categoryName(app.category), "Coming soon", "Region to be confirmed"].join(" ").toLocaleLowerCase("en-AU");
+        const searchable = [app.title, categoryName(app.category), "Placeholder"].join(" ").toLocaleLowerCase("en-AU");
         return (state.category === "all" || app.category === state.category)
-          && (state.region === "all" || app.region === state.region)
           && terms.every((term) => searchable.includes(term));
       });
       $("#app-groups").replaceChildren(...categories.filter((category) => category.id !== "all").flatMap((category) => {
@@ -295,12 +297,12 @@ Fabric deployment:  Coming soon</code></pre>
       }));
       $("#results").textContent = `Showing ${visible.length} of ${apps.length} project placeholders`;
       $("#empty").hidden = visible.length !== 0;
-      $("#clear").hidden = state.category === "all" && state.region === "all" && !state.search;
+      $("#clear").hidden = state.category === "all" && !state.search;
       document.querySelectorAll(".filter").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.category === state.category)));
     }
     function reset() {
-      state.category = "all"; state.region = "all"; state.search = "";
-      $("#search").value = ""; $("#region").value = "all";
+      state.category = "all"; state.search = "";
+      $("#search").value = "";
       render();
     }
     categories.forEach((category) => {
@@ -312,7 +314,6 @@ Fabric deployment:  Coming soon</code></pre>
       $("#filters").append(button);
     });
     $("#search").addEventListener("input", (event) => { state.search = event.target.value; render(); });
-    $("#region").addEventListener("change", (event) => { state.region = event.target.value; render(); });
     $("#clear").addEventListener("click", reset);
     $("#empty-reset").addEventListener("click", reset);
     function updateThemeButton() {

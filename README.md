@@ -20,18 +20,21 @@ deployed automatically.
 - All eight entries are placeholders named "Project 01" through "Project 08".
   They retain the four category groups (3 geospatial, 1 analytical, 2 platform
   tools, 2 games/learning) without claiming real project names or availability.
-- Each card shows "Preview coming soon" and a "Coming soon" badge. Cards are
-  non-interactive; there are no project links, media downloads, creator credits
-  or confirmed locations. Setup instructions are also placeholders.
+- Each card has a category-specific inline SVG icon (globe, chart, tools or
+  games), its numbered title and a single "Placeholder" badge. The icons are
+  decorative, not project previews. Cards are non-interactive; there are no
+  project links, media downloads, creator credits or confirmed locations.
+  Setup guides will be linked when projects are confirmed.
 - Expand "Filter projects" to search by placeholder name or category.
-  All project regions are currently marked `tbc` (to be confirmed).
+  Category filters, search and reset controls are available; region filtering
+  is omitted while locations remain unconfirmed.
 - "Propose an app" opens a prefilled GitHub issue in this repository; it requires
   GitHub sign-in and maintainer review. It does not automatically publish a
   submission.
 - Edit the `apps` array in `index.html` to rename or organise the placeholders.
-  Each entry has a `title`, category (`geo`, `analytics`, `tools`, `learning`)
-  and region (`tbc`). Update the card renderer, region filter and publication
-  statistics when introducing confirmed project details, media or links.
+  Each entry has a `title` and category (`geo`, `analytics`, `tools`, `learning`).
+  Update the card renderer and publication statistics when introducing confirmed
+  project details, media or links.
 - Category and placeholder counts derive from the catalogue. The page explicitly
   states that zero projects have been published.
 - The theme defaults to light regardless of the device preference. Use
